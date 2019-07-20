@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!-- Local Government -->
+        <record id="view_res_state_lga_tree" model="ir.ui.view">
+            <field name="name">res.state.lga.tree</field>
+            <field name="model">res.state.lga</field>
+            <field name="arch" type="xml">
+                <tree string="Local Government">
+                    <field name="name"/>
+                    <field name="state_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_res_state_lga_form" model="ir.ui.view">
+            <field name="name">res.state.lga.form</field>
+            <field name="model">res.state.lga</field>
+            <field name="arch" type="xml">
+                <form string="Local Government">
+                    <group>
+                        <field name="name"/>
+                        <field name="state_id" options='{"no_open": True}'/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_res_state_lga" model="ir.actions.act_window">
+            <field name="name">Local Governments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.state.lga</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_res_state_lga_tree"/>
+            <field name="help">You can manage the different federal constituencies you are working on from here. Each constituency is attached to one country.</field>
+        </record>
+    </data> 
+</odoo>
